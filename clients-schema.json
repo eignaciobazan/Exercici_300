@@ -8,53 +8,47 @@
         "age":{"type": "integer"},
         "loyalty_level":{"type": "string"},
         "active":{"type": "boolean"},
-        "joined":{"type": "string","format":"Data"},
+        "joined":{"type": "string","format":"date"},
         "contact":{
-            "type":"object",
-            "items":{
                 "type":"object",
                 "properties":{
                     "email":{"type":"string"},
-                    "phone":{"type":"number"}
+                    "phone":{"type":"string"}
                 }
-            }  
         },
         "address":{
-            "type":"object",
-            "items":{
                 "type":"object",
                 "properties":{
                     "city":{"type":"string"},
                     "country":{"type":"string"},
-                    "postal_code":{"type":"integer"}
-                }
-            }  
+                    "postal_code":{"type":"string"}
+                } 
         },
         "preferred_store":{
-            "type":"object",
-            "items":{
                 "type":"object",
                 "properties":{
                     "brand":{"type":"string"},
                     "location":{"type":"string"}
                 }
-            }  
         },
         "purchases":{
             "type":"array",
             "items":{
                 "type":"object",
                 "properties":{
-                    "data":{"type":"string","format":"Data"},
+                    "date":{"type":"string","format":"date"},
                     "store":{"type":"string"},
                     "basket":{
                         "type":"array",
-                        "properties":{
-                            "product":{"type": "string"},
-                            "category":{"type":"string"},
-                            "quantity":{"type":"integer"},
-                            "price":{"type":"number"}
-                        }
+                        "items":{
+                            "type":"object",
+                            "properties":{
+                                "product":{"type": "string"},
+                                "category":{"type":"string"},
+                                "quantity":{"type":"integer"},
+                                "price":{"type":"number"}
+                            }
+                        }    
                     }
                 }
             }
