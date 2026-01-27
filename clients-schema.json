@@ -1,0 +1,65 @@
+{
+  "type": "array",
+  "items": {
+    "type":"object",
+    "properties":{
+        "id":{"type": "string" },
+        "name":{"type": "string"},
+        "age":{"type": "integer"},
+        "loyalty_level":{"type": "string"},
+        "active":{"type": "boolean"},
+        "joined":{"type": "string","format":"Data"},
+        "contact":{
+            "type":"object",
+            "items":{
+                "type":"object",
+                "properties":{
+                    "email":{"type":"string"},
+                    "phone":{"type":"number"}
+                }
+            }  
+        },
+        "address":{
+            "type":"object",
+            "items":{
+                "type":"object",
+                "properties":{
+                    "city":{"type":"string"},
+                    "country":{"type":"string"},
+                    "postal_code":{"type":"integer"}
+                }
+            }  
+        },
+        "preferred_store":{
+            "type":"object",
+            "items":{
+                "type":"object",
+                "properties":{
+                    "brand":{"type":"string"},
+                    "location":{"type":"string"}
+                }
+            }  
+        },
+        "purchases":{
+            "type":"array",
+            "items":{
+                "type":"object",
+                "properties":{
+                    "data":{"type":"string","format":"Data"},
+                    "store":{"type":"string"},
+                    "basket":{
+                        "type":"array",
+                        "properties":{
+                            "product":{"type": "string"},
+                            "category":{"type":"string"},
+                            "quantity":{"type":"integer"},
+                            "price":{"type":"number"}
+                        }
+                    }
+                }
+            }
+        },
+        "lifetime_spend":{"type":"number"}
+    }
+  }
+}
